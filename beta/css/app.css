@@ -3934,6 +3934,21 @@ h1, h2 {
   color: #798483; }
 
 /*--------
+GLOBAL
+--------*/
+a.link {
+  border-bottom: 1px solid rgba(252, 87, 91, 0.5);
+  transition: border-color .1s, color .1s, background-color .1s; }
+  a.link:hover, a.link:focus {
+    color: #c80408;
+    background-color: rgba(200, 4, 8, 0.05);
+    border-bottom-color: rgba(200, 4, 8, 0.5); }
+  a.link:active, a.link.active {
+    color: #0a0a0a;
+    background-color: inherit;
+    border-bottom-color: rgba(10, 10, 10, 0); }
+
+/*--------
 STRUCTURE
 --------*/
 body {
@@ -3994,6 +4009,10 @@ body {
   .techsquat-logo img {
     height: 3rem; }
 
+.wrapper-for-button .button {
+  vertical-align: baseline;
+  margin-bottom: 0.5rem; }
+
 /*--------
 HOMEPAGE
 --------*/
@@ -4004,10 +4023,29 @@ HOMEPAGE
 
 .panel {
   padding: 1rem;
+  padding-bottom: .001rem;
+  margin-bottom: 1rem;
   background-color: white;
   box-shadow: 0 1px 2px rgba(10, 10, 10, 0.1);
-  border-radius: 4px;
-  margin-bottom: 2rem; }
+  border-radius: 4px; }
+  @media screen and (min-width: 64em) {
+    .panel {
+      margin-bottom: 2rem;
+      padding-top: 1.5rem; } }
+
+#values img {
+  margin-bottom: .5rem;
+  opacity: .5; }
+
+@media screen and (min-width: 64em) {
+  #values {
+    text-align: center; }
+    #values img {
+      float: none;
+      display: block;
+      margin: auto;
+      margin-bottom: .75rem;
+      width: 48px; } }
 
 /*--------
 MEMBERS
@@ -4055,6 +4093,10 @@ HELPER CLASSES
 --------*/
 .uppercase {
   text-transform: uppercase; }
+
+.smallcaps {
+  text-transform: lowercase;
+  font-variant: small-caps; }
 
 @media screen and (min-width: 40em) {
   .justify {
