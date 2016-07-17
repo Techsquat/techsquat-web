@@ -3957,12 +3957,15 @@ body {
 #nav {
   background-color: white;
   box-shadow: 0 1px 2px rgba(10, 10, 10, 0.1); }
+  @media screen and (min-width: 25em) {
+    #nav .row {
+      padding-right: 0rem; } }
   @media screen and (min-width: 25em) and (max-width: 39.9375em) {
     #nav .menu {
-      padding-left: 0; } }
+      padding-left: 0rem;
+      padding-right: 0rem; } }
   #nav .menu h4 {
-    margin-left: -.4rem;
-    margin-right: -2rem; }
+    margin-left: -.4rem; }
     @media screen and (min-width: 25em) {
       #nav .menu h4 {
         margin-bottom: 0; } }
@@ -4038,14 +4041,14 @@ HOMEPAGE
   opacity: .5; }
 
 @media screen and (min-width: 64em) {
-  #values {
+  #values .panel {
     text-align: center; }
-    #values img {
-      float: none;
-      display: block;
-      margin: auto;
-      margin-bottom: .75rem;
-      width: 48px; } }
+  #values img {
+    float: none;
+    display: block;
+    margin: auto;
+    margin-bottom: .75rem;
+    width: 48px; } }
 
 /*--------
 MEMBERS
