@@ -3948,6 +3948,21 @@ a.link {
     background-color: inherit;
     border-bottom-color: rgba(10, 10, 10, 0); }
 
+a.link-plus-icon {
+  white-space: nowrap; }
+  a.link-plus-icon span {
+    border-bottom: 1px solid rgba(252, 87, 91, 0.5); }
+  a.link-plus-icon:hover, a.link-plus-icon:focus {
+    color: #c80408; }
+    a.link-plus-icon:hover span, a.link-plus-icon:focus span {
+      background-color: rgba(200, 4, 8, 0.05);
+      border-bottom-color: rgba(200, 4, 8, 0.5); }
+  a.link-plus-icon:active, a.link-plus-icon.active {
+    color: #0a0a0a; }
+    a.link-plus-icon:active span, a.link-plus-icon.active span {
+      background-color: inherit;
+      border-bottom-color: rgba(10, 10, 10, 0); }
+
 /*--------
 STRUCTURE
 --------*/
@@ -4036,42 +4051,67 @@ HOMEPAGE
       margin-bottom: 2rem;
       padding-top: 1.5rem; } }
 
-#values img {
+#hp__values img {
   margin-bottom: .5rem;
   opacity: .5; }
 
 @media screen and (min-width: 64em) {
-  #values .panel {
+  #hp__values .panel {
     text-align: center; }
-  #values img {
+  #hp__values img {
     float: none;
     display: block;
     margin: auto;
     margin-bottom: .75rem;
     width: 48px; } }
 
-/*--------
-MEMBERS
---------*/
-img.mask {
-  /* For future when Firefox and Safari will support this */
+#hp__members img.mask {
   position: relative;
   float: left;
   width: 60px;
   height: 60px;
-  border-radius: 100rem;
-  -webkit-mask-image: url(../files/svg-mask-for-future.svg);
-  -webkit-mask-size: 100%;
   transition: .2s; }
-  img.mask:hover {
+  #hp__members img.mask:hover {
     z-index: 100;
     -webkit-transform: scale(1.5);
         -ms-transform: scale(1.5);
             transform: scale(1.5); }
 
-@-moz-document url-prefix() {
-  img.mask {
-    margin-right: .5rem; } }
+/*--------
+MEMBERS
+--------*/
+#members__panels .panel {
+  margin-top: 1rem;
+  margin-bottom: 2rem; }
+  @media screen and (min-width: 40em) {
+    #members__panels .panel {
+      margin-bottom: 3rem; } }
+
+#members__panels img.mask {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  margin-top: -3rem; }
+  @media screen and (min-width: 40em) {
+    #members__panels img.mask {
+      width: 120px;
+      height: 120px;
+      margin-top: -4rem; } }
+
+#members__panels h3 {
+  margin-top: .25em;
+  margin-bottom: 0;
+  text-align: center; }
+
+#members__panels h5 {
+  margin-bottom: 0.33rem;
+  font-size: .85rem;
+  text-align: center;
+  font-style: italic; }
+
+#members__panels .desc {
+  margin-top: 1rem; }
 
 /*--------
 BUTTONS
@@ -4105,6 +4145,19 @@ HELPER CLASSES
   .justify {
     text-align: justify; } }
 
+p.small, h5.small {
+  font-size: 85%; }
+
+img.mask {
+  /* For future when Firefox and Safari will support this */
+  border-radius: 100rem;
+  -webkit-mask-image: url(../files/svg-mask-for-future.svg);
+  -webkit-mask-size: 100%; }
+
+@-moz-document url-prefix() {
+  img.mask {
+    margin-right: .5rem; } }
+
 /* Margin and Padding for Media Queries */
 @media screen and (min-width: 25em) {
   .has-padding-hor {
@@ -4134,14 +4187,26 @@ HELPER CLASSES
     .has-margin-top.button {
       margin-top: 2rem; } }
 
-/* "Mission" on HP */
-h4.has-margin-top {
+.has-padding-bot.row {
+  padding-bottom: 2rem; }
+  @media screen and (min-width: 25em) {
+    .has-padding-bot.row {
+      padding-bottom: 4rem; } }
+  @media screen and (min-width: 40em) {
+    .has-padding-bot.row {
+      padding-bottom: 6rem; } }
+  @media screen and (min-width: 64em) {
+    .has-padding-bot.row {
+      padding-bottom: 8rem; } }
+
+/* "Mission" on HP, Members */
+h4.has-margin-top, h3.has-margin-top {
   margin-top: 1rem; }
   @media screen and (min-width: 25em) {
-    h4.has-margin-top {
+    h4.has-margin-top, h3.has-margin-top {
       margin-top: 1.5rem; } }
   @media screen and (min-width: 40em) {
-    h4.has-margin-top {
+    h4.has-margin-top, h3.has-margin-top {
       margin-top: 2rem; } }
 
 .declaration-order {
