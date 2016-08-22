@@ -4200,13 +4200,19 @@ img.mask {
       padding-bottom: 8rem; } }
 
 /* "Mission" on HP, Members */
-h4.has-margin-top, h3.has-margin-top {
+h4.has-margin-top,
+h3.has-margin-top,
+h2.has-margin-top {
   margin-top: 1rem; }
   @media screen and (min-width: 25em) {
-    h4.has-margin-top, h3.has-margin-top {
+    h4.has-margin-top,
+    h3.has-margin-top,
+    h2.has-margin-top {
       margin-top: 1.5rem; } }
   @media screen and (min-width: 40em) {
-    h4.has-margin-top, h3.has-margin-top {
+    h4.has-margin-top,
+    h3.has-margin-top,
+    h2.has-margin-top {
       margin-top: 2rem; } }
 
 .declaration-order {
