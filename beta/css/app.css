@@ -4114,6 +4114,21 @@ MEMBERS
   margin-top: 1rem; }
 
 /*--------
+PLACES
+--------*/
+.places__members img.mask {
+  position: relative;
+  float: left;
+  width: 60px;
+  height: 60px;
+  transition: .2s; }
+  .places__members img.mask:hover {
+    z-index: 100;
+    -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5); }
+
+/*--------
 BUTTONS
 --------*/
 .ts-button {
