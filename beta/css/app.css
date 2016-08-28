@@ -3938,6 +3938,7 @@ h1, h2 {
 GLOBAL
 --------*/
 a.link {
+  line-height: 1;
   border-bottom: 1px solid rgba(252, 87, 91, 0.5);
   transition: border-color .1s, color .1s, background-color .1s; }
   a.link:hover, a.link:focus {
