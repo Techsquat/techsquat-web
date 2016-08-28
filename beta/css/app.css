@@ -4270,6 +4270,13 @@ h2.has-margin-top {
     h2.has-margin-top {
       margin-top: 2rem; } }
 
+/*--------
+BUGFIX
+--------*/
+@media screen and (max-width: 39.9375em) {
+  .panel, .column, .columns {
+    height: auto !important; } }
+
 .declaration-order {
   /* Positioning */
   position: absolute;
