@@ -3976,9 +3976,16 @@ a.link-plus-icon {
 STRUCTURE
 --------*/
 body {
-  background-color: rgba(121, 132, 131, 0.1); }
+  background-color: rgba(121, 132, 131, 0.1);
+  padding-top: 8rem; }
+  @media screen and (min-width: 25em) {
+    body {
+      padding-top: 4rem; } }
 
 #nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: white;
   box-shadow: 0 1px 2px rgba(10, 10, 10, 0.1); }
   @media screen and (min-width: 25em) {
@@ -4084,17 +4091,32 @@ HOMEPAGE
 
 @media screen and (min-width: 64em) {
   #hp__values .panel {
-    text-align: center; }
+    text-align: center;
+    position: relative;
+    z-index: -2; }
   #hp__values img {
     float: none;
     display: block;
     margin: auto;
     margin-bottom: .75rem;
-    width: 48px; } }
+    width: 48px;
+    position: relative;
+    z-index: -1; } }
 
 /*--------
 MEMBERS
 --------*/
+img.mask {
+  /* For future when Firefox and Safari will support this */
+  border-radius: 100rem;
+  z-index: -10;
+  -webkit-mask-image: url(../files/svg-mask-for-future.svg);
+  -webkit-mask-size: 100%; }
+
+@-moz-document url-prefix() {
+  img.mask {
+    margin-right: .5rem; } }
+
 .members-list img.mask {
   position: relative;
   float: left;
@@ -4108,6 +4130,8 @@ MEMBERS
             transform: scale(1.5); }
 
 #members__panels .panel {
+  position: relative;
+  z-index: -2;
   margin-top: 1rem;
   margin-bottom: 2rem; }
   @media screen and (min-width: 40em) {
@@ -4115,6 +4139,8 @@ MEMBERS
       margin-bottom: 3rem; } }
 
 #members__panels img.mask {
+  position: relative;
+  z-index: -1;
   display: block;
   width: 80px;
   height: 80px;
@@ -4182,16 +4208,6 @@ HELPER CLASSES
 
 p.small, h5.small {
   font-size: 85%; }
-
-img.mask {
-  /* For future when Firefox and Safari will support this */
-  border-radius: 100rem;
-  -webkit-mask-image: url(../files/svg-mask-for-future.svg);
-  -webkit-mask-size: 100%; }
-
-@-moz-document url-prefix() {
-  img.mask {
-    margin-right: .5rem; } }
 
 /* Margin and Padding for Media Queries */
 @media screen and (min-width: 25em) {
