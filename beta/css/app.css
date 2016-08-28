@@ -3931,7 +3931,8 @@ h* {
 h1, h2 {
   font-family: 'Exo 2', sans-serif;
   font-weight: 900;
-  color: #798483; }
+  color: #798483;
+  letter-spacing: 0.02em; }
 
 /*--------
 GLOBAL
@@ -3950,6 +3951,10 @@ a.link {
 
 a.link-plus-icon {
   white-space: nowrap; }
+  a.link-plus-icon .fa {
+    font-size: 14px; }
+  a.link-plus-icon .fa.fa-lg {
+    font-size: 22px; }
   a.link-plus-icon span {
     border-bottom: 1px solid rgba(252, 87, 91, 0.5); }
   a.link-plus-icon:hover, a.link-plus-icon:focus {
@@ -3957,6 +3962,9 @@ a.link-plus-icon {
     a.link-plus-icon:hover span, a.link-plus-icon:focus span {
       background-color: rgba(200, 4, 8, 0.05);
       border-bottom-color: rgba(200, 4, 8, 0.5); }
+    a.link-plus-icon:hover span span, a.link-plus-icon:focus span span {
+      background-color: inherit;
+      border-bottom-color: inherit; }
   a.link-plus-icon:active, a.link-plus-icon.active {
     color: #0a0a0a; }
     a.link-plus-icon:active span, a.link-plus-icon.active span {
@@ -4021,15 +4029,33 @@ body {
         padding-right: 1rem;
         padding-left: 1rem; } }
 
+#footer {
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(10, 10, 10, 0.1);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem; }
+  @media screen and (min-width: 25em) {
+    #footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      padding-bottom: 4rem; } }
+  @media screen and (min-width: 40em) {
+    #footer {
+      margin-top: 6rem;
+      padding-top: 3rem;
+      padding-bottom: 6rem; } }
+  @media screen and (min-width: 64em) {
+    #footer {
+      margin-top: 8rem;
+      padding-top: 4rem;
+      padding-bottom: 8rem; } }
+
 .techsquat-logo {
   padding-top: .5rem;
   padding-bottom: .5rem; }
   .techsquat-logo img {
     height: 3rem; }
-
-.wrapper-for-button .button {
-  vertical-align: baseline;
-  margin-bottom: 0.5rem; }
 
 /*--------
 HOMEPAGE
@@ -4065,21 +4091,21 @@ HOMEPAGE
     margin-bottom: .75rem;
     width: 48px; } }
 
-#hp__members img.mask {
+/*--------
+MEMBERS
+--------*/
+.members-list img.mask {
   position: relative;
   float: left;
   width: 60px;
   height: 60px;
   transition: .2s; }
-  #hp__members img.mask:hover {
+  .members-list img.mask:hover {
     z-index: 100;
     -webkit-transform: scale(1.5);
         -ms-transform: scale(1.5);
             transform: scale(1.5); }
 
-/*--------
-MEMBERS
---------*/
 #members__panels .panel {
   margin-top: 1rem;
   margin-bottom: 2rem; }
@@ -4116,18 +4142,6 @@ MEMBERS
 /*--------
 PLACES
 --------*/
-.places__members img.mask {
-  position: relative;
-  float: left;
-  width: 60px;
-  height: 60px;
-  transition: .2s; }
-  .places__members img.mask:hover {
-    z-index: 100;
-    -webkit-transform: scale(1.5);
-        -ms-transform: scale(1.5);
-            transform: scale(1.5); }
-
 /*--------
 BUTTONS
 --------*/
@@ -4146,6 +4160,10 @@ BUTTONS
     color: black;
     border-color: black; }
 
+.wrapper-for-button .button {
+  vertical-align: baseline;
+  margin-bottom: 0.5rem; }
+
 /*--------
 HELPER CLASSES
 --------*/
@@ -4154,7 +4172,8 @@ HELPER CLASSES
 
 .smallcaps {
   text-transform: lowercase;
-  font-variant: small-caps; }
+  font-variant: small-caps;
+  font-style: normal; }
 
 @media screen and (min-width: 40em) {
   .justify {
@@ -4195,6 +4214,26 @@ img.mask {
   @media screen and (min-width: 64em) {
     .has-margin-top.row {
       margin-top: 8rem; } }
+
+.has-margin-top-cond.row,
+.has-margin-top.column,
+.has-margin-top.columns {
+  margin-top: 1rem; }
+  @media screen and (min-width: 25em) {
+    .has-margin-top-cond.row,
+    .has-margin-top.column,
+    .has-margin-top.columns {
+      margin-top: 2rem; } }
+  @media screen and (min-width: 40em) {
+    .has-margin-top-cond.row,
+    .has-margin-top.column,
+    .has-margin-top.columns {
+      margin-top: 3rem; } }
+  @media screen and (min-width: 64em) {
+    .has-margin-top-cond.row,
+    .has-margin-top.column,
+    .has-margin-top.columns {
+      margin-top: 4rem; } }
 
 .has-margin-top.button {
   margin-top: 1rem; }
