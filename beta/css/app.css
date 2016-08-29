@@ -4129,7 +4129,6 @@ img.mask {
 
 #members__panels .panel {
   position: relative;
-  z-index: -2;
   margin-top: 1rem;
   margin-bottom: 2rem; }
   @media screen and (min-width: 40em) {
@@ -4138,7 +4137,6 @@ img.mask {
 
 #members__panels img.mask {
   position: relative;
-  z-index: -1;
   display: block;
   width: 80px;
   height: 80px;
