@@ -4116,7 +4116,6 @@ img.mask {
     margin-right: .5rem; } }
 
 .members-list img.mask {
-  position: relative;
   float: left;
   width: 60px;
   height: 60px;
@@ -4128,7 +4127,6 @@ img.mask {
             transform: scale(1.5); }
 
 #members__panels .panel {
-  position: relative;
   margin-top: 1rem;
   margin-bottom: 2rem; }
   @media screen and (min-width: 40em) {
@@ -4136,7 +4134,6 @@ img.mask {
       margin-bottom: 3rem; } }
 
 #members__panels img.mask {
-  position: relative;
   display: block;
   width: 80px;
   height: 80px;
