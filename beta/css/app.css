@@ -3979,14 +3979,9 @@ a.link-plus-icon {
 STRUCTURE
 --------*/
 body {
-  background-color: rgba(121, 132, 131, 0.1);
-  padding-top: 8rem; }
-  @media screen and (min-width: 25em) {
-    body {
-      padding-top: 4rem; } }
+  background-color: rgba(121, 132, 131, 0.1); }
 
 #nav {
-  position: fixed;
   top: 0;
   width: 100%;
   background-color: white;
