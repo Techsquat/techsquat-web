@@ -1,0 +1,617 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+@include foundation-accordion;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-close-button;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-flex-video;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-menu;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+
+
+
+
+/*
+
+TECHSQUAT CUSTOM CODE
+
+Mostly by Vladimír Mokrý
+vmokry.com
+
+*/
+
+
+/*--------
+ADD
+--------*/
+a { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+h* {
+  font-weight: 500;
+}
+@mixin box-shadow {
+  box-shadow: 0 1px 2px rgba($black,.1);
+}
+@mixin transition {
+  transition: border-color .1s, color .1s, background-color .1s;
+}
+h1 {
+	line-height: 1.25;
+}
+
+
+.hyphenate {
+  //overflow-wrap: break-word;
+  //word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+$primary-color-alt: scale-color($primary-color, $lightness: -40%);
+h1, h2 { 
+  font-family: 'Exo 2', sans-serif; 
+  font-weight: 900;
+  color: $col-header;
+	letter-spacing: 0.02em;
+}
+h2 {
+	margin-bottom: .75em;
+}
+
+/*--------
+GLOBAL
+--------*/
+
+a.link {
+	line-height: 1;
+  border-bottom: 1px solid rgba($primary-color,.5);
+  @include transition
+  &:hover, &:focus {
+    color: $primary-color-alt;
+    background-color: rgba($primary-color-alt,.05);
+    border-bottom-color: rgba($primary-color-alt,.5);
+  }
+  &:active, &.active {
+    color: $black;
+    background-color: inherit;
+    border-bottom-color: rgba($black,0);
+  }
+	
+}
+a.link-plus-icon {
+  white-space: nowrap;
+	.fa { font-size: 14px; }
+	.fa.fa-lg { font-size: 22px; }
+  span {
+    border-bottom: 1px solid rgba($primary-color,.5);
+  }
+  &:hover, &:focus {
+    color: $primary-color-alt;
+    span {
+      background-color: rgba($primary-color-alt,.05);
+      border-bottom-color: rgba($primary-color-alt,.5);
+    }
+		span span {
+      background-color: inherit;
+      border-bottom-color: inherit;
+    }
+  }
+  &:active, &.active {
+    color: $black;
+    span {
+      background-color: inherit;
+      border-bottom-color: rgba($black,0);
+    }
+  }
+}
+
+/*--------
+STRUCTURE
+--------*/
+
+body {
+  background-color: rgba($col-header, .1);
+	padding-top: 8rem;
+	@include breakpoint(small up) {
+		padding-top: 4rem;
+	}
+}
+.row.xlarge {
+	@include breakpoint(xlarge up) {
+		max-width: 1640px;
+	}
+}
+.row.xxlarge {
+	@include breakpoint(xxlarge up) {
+		max-width: 2300px;
+	}
+}
+
+#nav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 50;
+	/* Thanks Ondřej Bárta ! ^^ */
+  .row {
+		
+    @include breakpoint(small only) {
+      padding-right: 0rem;
+    }
+  }
+	
+  background-color: white;
+  @include box-shadow;
+  .menu {
+    @include breakpoint(small only) {
+      padding-left: 0rem;
+      padding-right: 0rem;
+    }
+    h4 { 
+      margin-left: -.4rem;
+      //margin-right: -2rem;
+      @include breakpoint(small up) {
+        margin-bottom: 0;
+      }
+      @include breakpoint(medium up) {
+        margin-left: -.6rem;
+      }
+      @include breakpoint(large up) {
+         margin-left: -1rem;
+      }
+    }
+    a {
+      padding-top: .35rem;
+      padding-right: .35rem;
+      padding-bottom: .5rem;
+      padding-left: .35rem;
+      font-family: 'Exo 2', sans-serif; 
+      font-weight: 600;
+      border-radius: $global-radius;
+      @include transition
+      &:hover, &:focus {
+        color: $primary-color-alt;
+        background-color: rgba($primary-color-alt,.05);
+
+      }
+      &:active, &.active {
+        color: $black;
+        background-color: inherit;
+        
+      }
+      @include breakpoint(small up) {
+        display: inline-block;
+        margin-top: .5rem;
+        padding-top: .45rem;
+        padding-bottom: .55rem;
+        line-height: 2rem;
+    
+      }
+      @include breakpoint(medium up) {
+        padding-right: .5rem;
+        padding-left: .5rem;
+      }
+      @include breakpoint(large up) {
+        padding-right: 1rem;
+        padding-left: 1rem;
+      }
+    }
+  } 
+}
+#footer {
+	background-color: white;
+  @include box-shadow;
+	
+	margin-top: 2rem;
+	padding-top: 1rem;
+	padding-bottom: 2rem;
+  @include breakpoint(small up) {
+    margin-top: 4rem;
+		padding-top: 2rem;
+		padding-bottom: 4rem;
+  }
+  @include breakpoint(medium up) {
+    margin-top: 6rem;
+		padding-top: 3rem;
+		padding-bottom: 6rem;
+  }
+  @include breakpoint(large up) {
+    margin-top: 8rem;
+		padding-top: 4rem;
+		padding-bottom: 8rem;
+  }
+}
+.techsquat-logo {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  img {  
+    height: 3rem; 
+  }
+}
+
+
+
+/*--------
+HOMEPAGE
+--------*/
+
+#welcome-picture {
+  img { 
+    position:absolute;
+    opacity: .25; 
+    z-index: -3;
+  }
+}
+
+.panel {
+  padding: 1rem;
+	padding-top: 1.5rem;
+  padding-bottom: .001rem;
+  margin-bottom: 2rem;
+  background-color: white;
+  @include box-shadow;
+  border-radius: $global-radius;
+
+}
+#hp__members {
+	.members-list {
+		margin-bottom: 1rem;
+		@include breakpoint(medium up) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+#hp__projects {
+	.brands {
+		
+		margin-top: -1rem;
+		margin-bottom: .5rem;
+		@include breakpoint(medium up) {
+			margin-bottom: 1rem;
+		}
+	}
+	.logo-area {
+		display: inline-block;
+		height: 5rem;
+		line-height: 5rem;
+		margin-right: 2rem;
+		@include breakpoint(medium up) {
+			height: 6rem;
+			line-height: 6rem;
+    }
+	}
+	img	{
+		display: inline-block;
+		vertical-align: middle;
+		max-width: 8rem;
+		@include breakpoint(medium up) {
+			max-width: 10rem;
+		}
+	}
+}
+
+#hp__values {
+  img {
+    margin-bottom: .5rem;
+    opacity: .5;
+  }
+  @include breakpoint(large up) {
+    .panel {
+      text-align: center;
+    }
+    img {
+      float: none;
+      display: block;
+      margin: auto;
+      margin-bottom: .75rem;
+      width: 48px;
+    }
+  }
+}
+
+/*--------
+MEMBERS
+--------*/
+
+img.mask {
+  /* For future when Firefox and Safari will support this */
+	border-radius: 100rem;
+	//z-index: -1;
+  -webkit-mask-image: url(../files/svg-mask-for-future.svg);
+  -webkit-mask-size: 100%;
+}
+@-moz-document url-prefix() {
+	img.mask {
+		margin-right: .5rem;
+	}
+}
+.members-list img.mask {
+  float: left;
+  width: 60px;
+  height: 60px;
+  transition: .2s;
+	position: relative;
+  &:hover {
+    z-index: 100;
+    transform: scale(1.5);
+		z-index: 1;
+  }	
+}
+.members-list.small img.mask {
+	width: 40px;
+	height: 40px;
+}
+#members__panels {
+  .panel {
+		margin-top: 1rem;
+    margin-bottom: 2rem;
+    @include breakpoint(medium up) {
+      margin-bottom: 3rem;
+    }
+  }
+  img.mask {
+		display: block;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    margin-top: -3rem;
+    @include breakpoint(medium up) {
+      width: 120px;
+      height: 120px;
+      margin-top: -4rem;
+    }
+
+  }
+  h3 { 
+    margin-top: .25em;
+    margin-bottom: 0;
+    text-align: center; 
+    
+  }
+  h5 {
+    margin-bottom: 0.33rem;
+    font-size: .85rem;
+    text-align: center;
+    font-style: italic;
+  }
+  .desc {
+    margin-top: 1rem;
+  }
+}
+
+
+/*--------
+PROJECTS
+--------*/
+.projects__panels {
+	.logo-area {
+		display: block;
+		height: 5rem;
+		line-height: 5rem;
+		margin-left: -1rem;
+		margin-right: -1rem;
+		margin-bottom: 1rem;
+		margin-top: -1.5rem;
+		border-bottom: 1px solid rgba($col-header, .2);
+		text-align: center;
+		
+		@include breakpoint(medium up) {
+			height: 6rem;
+			line-height: 6rem;
+    }
+	
+		img	{
+			display: inline-block;
+			vertical-align: middle;
+			max-width: 8rem;
+			@include breakpoint(medium up) {
+				max-width: 10rem;
+			}
+		}
+	}
+	.members-list {
+		margin-top: -.5rem;
+		margin-bottom: .5rem;
+		float: right;
+	}
+	p.link {
+		float: left;
+	}
+}
+
+
+/*--------
+PLACES
+--------*/
+
+.techsquat-prg-logo img {
+	height: 3rem;
+	margin-bottom: 2rem;
+	@include breakpoint(medium up) {
+		height: 3.59rem;
+	}
+}
+
+
+/*--------
+BUTTONS
+--------*/
+
+.ts-button {
+  color: $primary-color;
+  background-color: inherit;
+  border-width: 2px;
+  border-color: rgba($primary-color,.5);
+  border-radius: $global-radius;
+  @include transition
+  &:hover, &:focus {
+    color: $primary-color-alt;
+    background-color: inherit;
+    border-color: rgba($primary-color-alt,.75); 
+  }
+  &:active {
+    color: black;
+    border-color: black;
+  }
+}
+.wrapper-for-button {
+  .button { 
+    vertical-align: baseline;
+    margin-bottom: 0.5rem;
+  }
+}
+
+
+/*--------
+HELPER CLASSES
+--------*/
+
+.uppercase {
+  text-transform: uppercase;
+}
+.smallcaps {
+  text-transform: lowercase;
+  font-variant: small-caps;
+	font-style: normal;
+}
+.justify {
+  @include breakpoint(medium up) {
+    text-align: justify;
+  }
+}
+p.small, h5.small {
+  font-size: 85%;
+}
+
+/* Margin and Padding for Media Queries */
+.has-padding-hor {
+  @include breakpoint(small up) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  @include breakpoint(medium up) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+.has-margin-top.row {
+  margin-top: 2rem;
+  @include breakpoint(small up) {
+    margin-top: 4rem;
+  }
+  @include breakpoint(medium up) {
+    margin-top: 6rem;
+  }
+  @include breakpoint(large up) {
+    margin-top: 8rem;
+  }
+}
+.has-padding-bot.row {
+  padding-bottom: 2rem;
+  @include breakpoint(small up) {
+    padding-bottom: 4rem;
+  }
+  @include breakpoint(medium up) {
+    padding-bottom: 6rem;
+  }
+  @include breakpoint(large up) {
+    padding-bottom: 8rem;
+  }
+}
+
+/* "Mission" on HP, Members */
+h4.has-margin-top, 
+h3.has-margin-top,
+h2.has-margin-top {
+  margin-top: 1rem;
+  @include breakpoint(small up) {
+    margin-top: 1.5rem;
+  }
+  @include breakpoint(medium up) {
+    margin-top: 2rem;
+  }
+}
+
+
+
+
+/*--------
+BUGFIX
+--------*/
+.panel, .column {
+	// Only affects small screens
+	@include breakpoint(small down) {
+		height: auto !important;
+	}
+}
+
+
+
+.declaration-order {
+  /* Positioning */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+
+  /* Box-model */
+  display: block;
+  float: right;
+  width: 100px;
+  height: 100px;
+
+  /* Typography */
+  font: normal 13px "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+
+  /* Visual */
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+
+  /* Misc */
+  opacity: 1;
+}
+
+
+

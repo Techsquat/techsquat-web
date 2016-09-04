@@ -4811,6 +4811,10 @@ h2.has-margin-top {
 /*--------
 BUGFIX
 --------*/
+@media screen and (max-width: 39.9375em) {
+  .panel, .column, .columns {
+    height: auto !important; } }
+
 .declaration-order {
   /* Positioning */
   position: absolute;
