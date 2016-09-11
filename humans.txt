@@ -1,0 +1,15 @@
+/* Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA */
+/* zurb.com */
+/* humanstxt.org */
+
+/* SITE */
+  Standards: HTML5, CSS3 
+  Software: Brackets, Git, 
+
+/* TEAM */
+	Brand, UI, Code: Vladimir Mokry
+	Twitter: @vmokry
+	From: Prague, Czech Republic
+
+	Code: Ondrej Barta
+	Twitter: @PageOnlineXS
