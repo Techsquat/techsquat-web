@@ -573,6 +573,8 @@ img.mask {
   border-width: 2px;
   border-color: rgba($primary-color,.5);
   border-radius: $global-radius;
+  min-height: 40px;
+  padding: 0.82em 1em 0.70em;
   @include transition
   &:hover, &:focus {
     color: $primary-color-alt;
