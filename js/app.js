@@ -14,7 +14,7 @@ var updateHash = function() {
 		highlightElement.classList.add(highlightClassName);
 		setTimeout(function() {
 			scrollTo(0, highlightElement.offsetTop - 100);
-		}, 1);
+		}, 10);
 	}
 }
 
